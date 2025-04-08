@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Tienda de Libros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Crear Cuenta</h1>
+    <form id="registroForm">
+        <label>Nombre: <input type="text" id="nombre" required></label><br>
+        <label>Apellidos: <input type="text" id="apellidos" required></label><br>
+        <label>Teléfono: <input type="text" id="telefono" required></label><br>
+        <label>Contraseña: <input type="password" id="password" minlength="8" required></label><br>
+
+        <label>Áreas de interés:</label><br>
+        <label><input type="checkbox" name="interes" value="programacion"> Programación</label><br>
+        <label><input type="checkbox" name="interes" value="diseño"> Diseño</label><br>
+        <label><input type="checkbox" name="interes" value="ciencias"> Ciencias</label><br>
+
+        <label>Fecha de nacimiento: <input type="date" id="nacimiento" required></label><br>
+
+        <label><input type="checkbox" id="acepta" required> Acepto los términos de proteccion de datos</label><br>
+
+        <button type="button" onclick="validarFormulario()">Agregar</button>
+    </form>
+
+    <div id="librosSection" style="display: none;">
+        <h2>Seleccionar Libros</h2>
+        <label>Nombre del libro: <input type="text" id="libro"></label><br>
+        <label>Precio (€): <input type="number" id="precio" step="0.01" min="0"></label><br>
+        <label>IVA:
+            <select id="iva">
+                <option value="0.10">Reducido (10%)</option>
+                <option value="0.21">Normal (21%)</option>
+            </select>
+        </label><br>
+        <label>Resultado (€): <input type="text" id="resultado" readonly></label><br>
+        <button onclick="calcularTotal()">Calcular</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
